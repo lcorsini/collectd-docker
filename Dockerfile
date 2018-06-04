@@ -3,8 +3,7 @@ MAINTAINER Luca Corsini <lcorsini@gmail.com>
 
 COPY ["conf/collectd.conf", "/etc/"]
 
-RUN yum install epel-release \
-    && yum install collectd collectd-write_prometheus
+RUN yum -y install epel-release && yum -y install collectd collectd-write_prometheus
 
 # Add in startup script
 COPY ["run.sh", "/run/"]
